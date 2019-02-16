@@ -51,6 +51,11 @@ public class BotController {
         sendText(update, "You've already ended");
     }
 
+    @BotPath(requiredStage = Stage.ANY)
+    public void unreachable(Update update) {
+        sendText(update, String.valueOf(Math.random()));
+    }
+
     @SneakyThrows
     private void sendText(Update update, String text) {
         SendMessage message = new SendMessage();
